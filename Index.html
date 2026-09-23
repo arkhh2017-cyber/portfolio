@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley Karr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A2230;
+    --paper: #F6F7F8;
+    --rule: #D8DCE0;
+    --slate: #5A6472;
+    --pine: #1E4D3F;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Public Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--pine); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--pine);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Shell ---------- */
+  .shell {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Left rail ---------- */
+  .rail {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    padding: 64px 44px 44px 28px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--rule);
+  }
+  .rail .name {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 6px;
+  }
+  .rail .locale {
+    font-size: 0.82rem;
+    color: var(--slate);
+    margin: 0 0 40px;
+  }
+  .rail nav ul { list-style: none; margin: 0; padding: 0; }
+  .rail nav li { margin-bottom: 2px; }
+  .rail nav a {
+    display: block;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    color: var(--slate);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+  }
+  .rail nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+  .rail .spacer { flex: 1; min-height: 32px; }
+
+  .action {
+    display: block;
+    text-align: center;
+    background: var(--pine);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 3px;
+  }
+  .action:hover { background: #163A30; }
+  .action-sub {
+    font-size: 0.78rem;
+    color: var(--slate);
+    margin: 10px 0 0;
+    text-align: center;
+  }
+  .action-sub a { color: var(--slate); }
+
+  /* ---------- Content ---------- */
+  main { padding: 64px 0 96px 56px; max-width: 700px; }
+
+  .lede {
+    font-family: var(--serif);
+    font-size: 2.35rem;
+    font-weight: 400;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+  .standfirst {
+    font-size: 1.04rem;
+    color: var(--slate);
+    max-width: 60ch;
+    margin: 0 0 28px;
+  }
+  .now {
+    font-size: 0.92rem;
+    padding: 14px 0 0;
+    border-top: 1px solid var(--rule);
+    color: var(--slate);
+  }
+  .now strong { color: var(--ink); font-weight: 600; }
+
+  section { margin-top: 68px; }
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 22px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Experience: date in gutter, real chronology */
+  .role {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .role:last-child { border-bottom: none; }
+  .role .when {
+    font-size: 0.82rem;
+    color: var(--slate);
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .role .org {
+    font-size: 0.9rem;
+    color: var(--pine);
+    margin: 2px 0 9px;
+  }
+  .role p { font-size: 0.94rem; color: var(--slate); }
+
+  /* Selected work */
+  .work { margin: 0; padding: 0; list-style: none; }
+  .work li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .work li:last-child { border-bottom: none; }
+  .work .title { font-size: 0.97rem; font-weight: 600; display: block; }
+  .work .where { font-size: 0.8rem; color: var(--slate); }
+  .work .desc { font-size: 0.92rem; color: var(--slate); margin-top: 5px; }
+
+  /* Education */
+  .degree { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .degree:last-child { border-bottom: none; }
+  .degree .school { font-size: 0.9rem; color: var(--slate); margin-top: 2px; }
+  .degree .detail { font-size: 0.88rem; color: var(--slate); margin-top: 4px; }
+
+  /* Recognition — compact, not eight cards */
+  .recog { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 34px; }
+  .recog li {
+    font-size: 0.91rem;
+    color: var(--slate);
+    padding: 6px 0 6px 15px;
+    position: relative;
+    break-inside: avoid;
+  }
+  .recog li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 15px;
+    width: 6px; height: 1px;
+    background: var(--pine);
+  }
+
+  /* Contact */
+  .contact-list { list-style: none; margin: 0; padding: 0; }
+  .contact-list li { padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 0.94rem; }
+  .contact-list li:last-child { border-bottom: none; }
+  .contact-list .k { display: inline-block; width: 90px; color: var(--slate); font-size: 0.85rem; }
+
+  /* TODO markers — remove before publishing */
+  .todo {
+    background: #FFF3CD;
+    border-bottom: 1px dashed #B8860B;
+    color: #6B5200;
+    padding: 0 3px;
+    font-family: var(--sans);
+    font-size: 0.9em;
+  }
+
+  footer {
+    margin-top: 76px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 860px) {
+    .shell { grid-template-columns: 1fr; }
+    .rail {
+      position: static;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 36px 24px 24px;
+    }
+    .rail .locale { margin-bottom: 22px; }
+    .rail nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-bottom: 24px; }
+    .rail .spacer { display: none; }
+    main { padding: 40px 24px 72px; max-width: none; }
+    .lede { font-size: 1.85rem; }
+    .role { grid-template-columns: 1fr; gap: 6px; }
+    .role .when { padding-top: 0; }
+    .recog { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="rail">
+    <p class="name">Ashley Karr</p>
+    <p class="locale">Fayetteville, Arkansas</p>
+
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#work">Selected work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <a class="action" href="#" data-todo="linkedin-url">Connect on LinkedIn</a>
+    <p class="action-sub"><a href="mailto:ashleyrkarr@gmail.com">ashleyrkarr@gmail.com</a></p>
+  </aside>
+
+  <main>
+
+    <h1 class="lede">New products are easy to launch and hard to land. I work on the part that comes after the idea.</h1>
+
+    <p class="standfirst">Distribution, inventory health, shopper media, and whether a product actually moves off the shelf. At Campbell's I supported Lance's first major innovation in four years; at Tyson I build the reporting that tells a business unit where its inventory is going wrong. I'm pursuing the M.S. in Product Innovation at Walton because commercialization is the part of innovation that decides whether the idea mattered.</p>
+
+    <p class="now"><strong>Currently</strong> — Full-time M.S. in Product Innovation candidate at the University of Arkansas, alongside a Business Management Internship at Tyson Foods, Prepared Foods (Corn Dog Business Unit), supporting State Fair and Jimmy Dean across Walmart and other national accounts.</p>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <ul class="work">
+        <li>
+          <span class="title">Sub-BU Inventory Health &amp; Distress Inventory Reporting</span>
+          <span class="where">Tyson Foods</span>
+          <p class="desc"><span class="todo">One line: what problem this solved and who uses it now.</span></p>
+        </li>
+        <li>
+          <span class="title">Lance Nashville Hot innovation launch</span>
+          <span class="where">Campbell's — the brand's first major innovation in four years</span>
+          <p class="desc"><span class="todo">One line: your specific role in the launch.</span></p>
+        </li>
+        <li>
+          <span class="title">Walmart Butterbeer Parlour Goldfish activation</span>
+          <span class="where">Campbell's — McKinney, TX</span>
+          <p class="desc"><span class="todo">One line: what the activation was and what you contributed.</span></p>
+        </li>
+        <li>
+          <span class="title">FY27 Back-to-School enterprise campaign</span>
+          <span class="where">Campbell's</span>
+          <p class="desc"><span class="todo">One line.</span></p>
+        </li>
+        <li>
+          <span class="title">Walmart sponsored search &amp; Brand Shop optimization</span>
+          <span class="where">Campbell's — Walmart Connect certified</span>
+          <p class="desc"><span class="todo">One line.</span></p>
+        </li>
+        <li>
+          <span class="title">FY26 &amp; FY27 rollback tracker and promotional calendar</span>
+          <span class="where">Campbell's</span>
+          <p class="desc"><span class="todo">One line.</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="role">
+        <div class="when">Jun 2026 — present</div>
+        <div>
+          <h3>Business Management Intern</h3>
+          <p class="org">Tyson Foods</p>
+          <p>Business analytics, inventory strategy, and cross-functional initiatives for the Prepared Foods Corn Dog Business Unit. Partner with Supply Chain, Sales, Marketing, Finance, Demand Planning, and Operations to monitor inventory health, flag risk, and recommend mitigation.</p>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="when">Aug 2025 — Jun 2026</div>
+        <div>
+          <h3>Omni Commerce Intern</h3>
+          <p class="org">Campbell's</p>
+          <p>Supported enterprise-wide omni-commerce work across the full brand portfolio, executing Walmart and Sam's Club strategy for both the Snacks and Meals &amp; Beverages divisions. Earned Walmart Connect certification; supported sponsored search, display media, and Brand Shop initiatives.</p>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="when">May 2023 — Jun 2026</div>
+        <div>
+          <h3>Shift Lead</h3>
+          <p class="org">7 Brew Coffee</p>
+          <p>Ran scheduling and shift operations, trained team members, and executed store-level promotions including limited-time beverage launches and seasonal activations. Held concurrently with coursework and the Campbell's internship.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="degree">
+        <h3>M.S., Product Innovation — in progress</h3>
+        <p class="school">University of Arkansas, Sam M. Walton College of Business</p>
+        <p class="detail">Full-time, 12-month track. Department of Strategy, Entrepreneurship and Venture Innovation, with the Office of Entrepreneurship and Innovation. Expected <span class="todo">term</span> 2027.</p>
+      </div>
+
+      <div class="degree">
+        <h3>B.S., Strategy, Entrepreneurship, Venture &amp; Innovation</h3>
+        <p class="school">University of Arkansas, Sam M. Walton College of Business — May 2026</p>
+        <p class="detail">Minors in Marketing and Finance/Real Estate</p>
+      </div>
+    </section>
+
+    <section id="recognition">
+      <h2>Recognition &amp; involvement</h2>
+      <ul class="recog">
+        <li>All-American Award for Leadership</li>
+        <li>Dean's List, Walton College of Business</li>
+        <li>Top Fundraiser, American Heart Association Sweethearts</li>
+        <li>Arkansas Alumni Association License Plate Scholarship</li>
+        <li>Sol Siegal Olympic Steel Scholarship</li>
+        <li>Leadership Scholarship</li>
+        <li>Kappa Kappa Gamma, Gamma Nu chapter</li>
+        <li>Ducks Unlimited, Prize and Merchandise Chair</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span class="k">Email</span><a href="mailto:ashleyrkarr@gmail.com">ashleyrkarr@gmail.com</a></li>
+        <li><span class="k">LinkedIn</span><span class="todo">URL needed</span></li>
+        <li><span class="k">Location</span>Fayetteville, Arkansas</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Built with AI collaboration — Module 2, 2026.</p>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
