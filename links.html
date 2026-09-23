@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley Karr — Links</title>
+<meta name="description" content="Ashley Karr — M.S. Product Innovation candidate, Walton College. Business analytics and product commercialization in consumer goods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A2230;
+    --paper: #F6F7F8;
+    --rule: #D8DCE0;
+    --slate: #5A6472;
+    --pine: #1E4D3F;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Public Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 430px;
+    padding: 44px 24px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ---- Identity: the 15-second read ---- */
+  .monogram {
+    width: 54px; height: 54px;
+    border: 1px solid var(--pine);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--serif);
+    font-size: 1.22rem;
+    color: var(--pine);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: 1.72rem;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 8px;
+  }
+  .role {
+    font-size: 0.97rem;
+    color: var(--slate);
+    margin: 0 0 22px;
+  }
+
+  .facts { list-style: none; margin: 0 0 30px; padding: 0; }
+  .facts li {
+    font-size: 0.88rem;
+    color: var(--slate);
+    padding: 7px 0 7px 16px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+  .facts li:last-child { border-bottom: none; }
+  .facts li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 17px;
+    width: 7px; height: 1px;
+    background: var(--pine);
+  }
+  .facts strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Links: thumb-sized targets ---- */
+  .links { display: flex; flex-direction: column; gap: 11px; }
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 58px;
+    padding: 13px 18px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .link:hover { border-color: var(--pine); }
+  .link:active { background: #EFF1F2; }
+  .link:focus-visible { outline: 2px solid var(--pine); outline-offset: 2px; }
+
+  .link .label { font-size: 0.97rem; font-weight: 600; }
+  .link .meta { font-size: 0.79rem; color: var(--slate); display: block; font-weight: 400; margin-top: 1px; }
+  .link .chev { color: var(--slate); flex-shrink: 0; }
+
+  .link.primary {
+    background: var(--pine);
+    border-color: var(--pine);
+    color: #fff;
+  }
+  .link.primary .meta { color: rgba(255,255,255,0.78); }
+  .link.primary .chev { color: rgba(255,255,255,0.78); }
+  .link.primary:active { background: #163A30; }
+
+  .todo {
+    background: #FFF3CD;
+    border-bottom: 1px dashed #B8860B;
+    color: #6B5200;
+    padding: 0 3px;
+    font-size: 0.9em;
+  }
+
+  footer {
+    margin-top: 34px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.78rem;
+    color: var(--slate);
+  }
+  footer a { color: var(--slate); }
+
+  /* Desktop gets breathing room, not a redesign */
+  @media (min-width: 700px) {
+    body { align-items: center; }
+    .card { padding: 56px 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="card">
+
+    <div class="monogram" aria-hidden="true">AK</div>
+
+    <h1>Ashley Karr</h1>
+    <p class="role">Product innovation and commercialization in consumer goods.</p>
+
+    <ul class="facts">
+      <li><strong>M.S. Product Innovation</strong> candidate, Walton College — full-time</li>
+      <li><strong>Business Management Intern</strong>, Tyson Foods — Prepared Foods</li>
+      <li>Previously <strong>Omni Commerce</strong> at Campbell's — Walmart Connect certified</li>
+    </ul>
+
+    <nav class="links" aria-label="Contact and profiles">
+
+      <a class="link primary" href="https://www.linkedin.com/in/ashley-karr-292554350" target="_blank" rel="noopener">
+        <span>
+          <span class="label">LinkedIn</span>
+          <span class="meta">Let's connect</span>
+        </span>
+        <svg class="chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <a class="link" href="mailto:ashleyrkarr@gmail.com">
+        <span>
+          <span class="label">Email</span>
+          <span class="meta">ashleyrkarr@gmail.com</span>
+        </span>
+        <svg class="chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <a class="link" href="index.html">
+        <span>
+          <span class="label">Portfolio</span>
+          <span class="meta">Projects, experience, background</span>
+        </span>
+        <svg class="chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <a class="link" href="#" data-todo="resume-pdf">
+        <span>
+          <span class="label">Résumé</span>
+          <span class="meta"><span class="todo">Add resume.pdf to the repo, then point here</span></span>
+        </span>
+        <svg class="chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+    </nav>
+
+    <footer>
+      <p>Fayetteville, Arkansas</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
